@@ -3,6 +3,8 @@ import Header from "./components/Header"
 import Tabs from "./components/Tabs"  
 import TodoList from "./components/TodoList"
 import { useState } from "react";
+import TodoInput from "./components/TodoInput";
+import TodoCards from "./components/TodoCards";
 
 
 
@@ -20,16 +22,27 @@ function App() {
           const newList = [...todos,{ input: newTodo, complete: false }]
 
           setTodos(newList);
+          console.log("Added");
         }
+
+      function handleDeleteTodo(index) {
+        const newList = todos.filter((todo, i) => i !== index);
+        setTodos(newList);
+        console.log("Deleted");
+        console.log("newdeleted%%%%%%%%%%List",newList)
+
+      }  
 
   return (
     <div>
       
-      <Header todos={todos} />
-      <TodoList todos={todos} handleAddTodo={handleAddTodo} />
+      
+      <TodoList todos={todos} delete={handleDeleteTodo} />
 
-      <Tabs todos={todos} handle={handleAddTodo}/>
-      <TodoInput handleAddTodo={handleAddTodo} />
+      
+      <TodoInput handleAddTodo={handleAddTodo} delete={handleDeleteTodo} />
+
+
 
       
       
@@ -39,6 +52,7 @@ function App() {
     </div>
   );
 }
-
+//export default handleDeleteTodo();
 export default App;
+
  

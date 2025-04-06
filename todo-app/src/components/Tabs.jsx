@@ -1,9 +1,10 @@
 export default function Tabs() {
-    const tabo =["All","Completed","Active"]
-    return (
+    const tab =["All","Completed","Open"]
+    
+     return (
         <nav>
             <h1>Tasks</h1>
-            {tabo.map((tab,i)=>{
+            {tab.map((tab,i)=>{
                 return(
                     <button className="status-button"  key={i}>{tab}</button>
                 )
