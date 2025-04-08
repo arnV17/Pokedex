@@ -7,13 +7,13 @@ import PokeCards from './components/PokeCards.jsx'
 function App() {
 
   
-  const [pokenum, setPokenum] = useState(1)
+  const [pokemun, setPokenum] = useState("")
   
 
   return (
     <div className='god'>
-        <SideNav pokenum={pokenum} setPokenum={setPokenum}/>
-        <PokeCards pokenum={pokenum}/>
+        <SideNav pokemun={pokemun} setPokenum={setPokenum}/>
+        <PokeCards pokemun={pokemun}/>
 
 
       
